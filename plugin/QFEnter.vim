@@ -135,13 +135,13 @@ function! s:RegisterKeymap()
 		let keepfocus = s:cmd_action_map[cmd][2]
 		for key in keylist
 			execute 'nnoremap <silent> <buffer> '.key.' :call QFEnter#OpenQFItem("'.tabwinfunc.'","'.qfopencmd.'","'.keepfocus.'",0)<CR>'
-			execute 'vnoremap <silent> <buffer> '.key.' :call QFEnter#OpenQFItem("'.tabwinfunc.'","'.qfopencmd.'","'.keepfocus.'",1)<CR>'
+			" execute 'xnoremap <silent> <buffer> '.key.' :call QFEnter#OpenQFItem("'.tabwinfunc.'","'.qfopencmd.'","'.keepfocus.'",1)<CR>'
 		endfor
 	endfor
 	for cfitem in g:qfenter_custom_map_list
 		for key in cfitem.keys
 			execute 'nnoremap <silent> <buffer> '.key.' :call QFEnter#OpenQFItem("'.cfitem.tabwinfunc.'","'.cfitem.qfopencmd.'","'.cfitem.keepfocus.'",0)<CR>'
-			execute 'vnoremap <silent> <buffer> '.key.' :call QFEnter#OpenQFItem("'.cfitem.tabwinfunc.'","'.cfitem.qfopencmd.'","'.cfitem.keepfocus.'",1)<CR>'
+			" execute 'xnoremap <silent> <buffer> '.key.' :call QFEnter#OpenQFItem("'.cfitem.tabwinfunc.'","'.cfitem.qfopencmd.'","'.cfitem.keepfocus.'",1)<CR>'
 		endfor 
 	endfor
 endfunction
